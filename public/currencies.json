@@ -1,0 +1,162 @@
+[
+	{
+		"code": "AUD",
+		"full_name": "Australian dollar",
+		"banknotes": [5, 10, 20, 50, 100]
+	},
+	{
+		"code": "BGN",
+		"full_name": "Bulgarian lev",
+		"banknotes": [2, 5, 10, 20, 50, 100]
+	},
+	{
+		"code": "BRL",
+		"full_name": "Brazilian real",
+		"banknotes": [2, 5, 10, 20, 50, 100]
+	},
+	{
+		"code": "CAD",
+		"full_name": "Canadian dollar",
+		"banknotes": [5, 10, 20, 50]
+	},
+	{
+		"code": "CHF",
+		"full_name": "Swiss franc",
+		"banknotes": [10, 20, 50, 100, 200, 1000]
+	},
+	{
+		"code": "CNY",
+		"full_name": "Chinese yuan",
+		"banknotes": [1, 5, 10, 20, 50, 100]
+	},
+	{
+		"code": "CZK",
+		"full_name": "Czech koruna",
+		"banknotes": [100, 500, 1000, 2000]
+	},
+	{
+		"code": "DKK",
+		"full_name": "Danish krone",
+		"banknotes": [50, 100, 200, 500, 1000]
+	},
+	{
+		"code": "EUR",
+		"full_name": "Euro",
+		"banknotes": [5, 10, 20, 50, 100, 200, 500]
+	},
+	{
+		"code": "GBP",
+		"full_name": "British pound",
+		"banknotes": [5, 10, 20, 50]
+	},
+	{
+		"code": "HKD",
+		"full_name": "Hong Kong dollar",
+		"banknotes": [10, 20, 50, 100, 500, 1000]
+	},
+	{
+		"code": "HRK",
+		"full_name": "Croatian kuna",
+		"banknotes": [10, 20, 50, 100, 200, 500]
+	},
+	{
+		"code": "HUF",
+		"full_name": "Hungarian forint",
+		"banknotes": [500, 1000, 2000, 5000, 10000, 20000]
+	},
+	{
+		"code": "IDR",
+		"full_name": "Indonesian rupiah",
+		"banknotes": [2000, 5000, 10000, 20000, 50000, 100000]
+	},
+	{
+		"code": "ILS",
+		"full_name": "Israeli new shekel",
+		"banknotes": [20, 50, 100, 200]
+	},
+	{
+		"code": "INR",
+		"full_name": "Indian rupee",
+		"banknotes": [10, 20, 50, 100, 500, 2000]
+	},
+	{
+		"code": "JPY",
+		"full_name": "Japanese yen",
+		"banknotes": [1000, 2000, 5000, 10000]
+	},
+	{
+		"code": "KRW",
+		"full_name": "South Korean won",
+		"banknotes": [1000, 5000, 10000, 50000]
+	},
+	{
+		"code": "MXN",
+		"full_name": "Mexican peso",
+		"banknotes": [20, 50, 100, 200, 500]
+	},
+	{
+		"code": "MYR",
+		"full_name": "Malaysian ringgit",
+		"banknotes": [1, 5, 10, 20, 50, 100]
+	},
+	{
+		"code": "NOK",
+		"full_name": "Norwegian krone",
+		"banknotes": [50, 100, 200, 500, 1000]
+	},
+	{
+		"code": "NZD",
+		"full_name": "New Zealand dollar",
+		"banknotes": [5, 10, 20, 50, 100]
+	},
+	{
+		"code": "PHP",
+		"full_name": "Philippine peso",
+		"banknotes": [20, 50, 100, 500, 1000]
+	},
+	{
+		"code": "PLN",
+		"full_name": "Polish zloty",
+		"banknotes": [10, 20, 50, 100, 200, 500]
+	},
+	{
+		"code": "RON",
+		"full_name": "Romanian leu",
+		"banknotes": [1, 5, 10, 50, 100]
+	},
+	{
+		"code": "RUB",
+		"full_name": "Russian ruble",
+		"banknotes": [50, 100, 500, 1000, 5000]
+	},
+	{
+		"code": "SEK",
+		"full_name": "Swedish krona",
+		"banknotes": [20, 50, 100, 200, 500]
+	},
+	{
+		"code": "SGD",
+		"full_name": "Singapore dollar",
+		"banknotes": [2, 5, 10, 50, 100, 1000]
+	},
+	{
+		"code": "THB",
+		"full_name": "Thai baht",
+		"banknotes": [20, 50, 100, 500, 1000]
+	},
+	{
+		"code": "TRY",
+		"full_name": "Turkish lira",
+		"banknotes": [5, 10, 20, 50, 100, 200]
+	},
+	{
+		"code": "USD",
+		"full_name": "US dollar",
+		"banknotes": [1, 5, 10, 20, 50, 100]
+	},
+	{
+		"code": "ZAR",
+		"full_name": "South African rand",
+		"banknotes": [10, 20, 50, 100, 200]
+	}
+]
