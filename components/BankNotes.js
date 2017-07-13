@@ -3,14 +3,16 @@ import React, {PropTypes} from 'react';
 const BankNotes = ({banknotes, selected}) => {
   return (    
     <table>
-      {banknotes.map(v => {
+      <tbody>
+      {banknotes.map((v, i) => {
         return(       
-          <tr>
+          <tr key={i}>
             <td>{v + ' ' + selected}</td>
             <td></td>
           </tr>
         )
       })}
+      </tbody>
     </table>
   )
 }
