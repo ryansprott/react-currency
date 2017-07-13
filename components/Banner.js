@@ -10,10 +10,10 @@ const Banner = ({localCurrency, foreignCurrency, localFullName, foreignFullName}
 }
 
 Banner.propTypes = {
-  localCurrency: PropTypes.string,
-  foreignCurrency: PropTypes.string,
-  localFullName: PropTypes.string,
-  foreignFullName: PropTypes.string
+  localCurrency: PropTypes.string.isRequired,
+  foreignCurrency: PropTypes.string.isRequired,
+  localFullName: PropTypes.string.isRequired,
+  foreignFullName: PropTypes.string.isRequired
 }
 
 export default Banner

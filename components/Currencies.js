@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import Currency from './Currency'
 
 class Currencies extends React.Component {
@@ -44,6 +44,16 @@ class Currencies extends React.Component {
       </div>
     )
   }
+}
+
+Currencies.propTypes = {
+  localHandler: PropTypes.func.isRequired,
+  foreignHandler: PropTypes.func.isRequired,
+  localCurrencySelected: PropTypes.string.isRequired,
+  foreignCurrencySelected: PropTypes.string.isRequired,
+  localBanknotes: PropTypes.array.isRequired,
+  foreignBanknotes: PropTypes.array.isRequired,
+  currencies: PropTypes.array.isRequired
 }
 
 export default Currencies

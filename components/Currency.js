@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import SelectList from './SelectList'
 import BankNotes from './BankNotes'
 
@@ -23,6 +23,15 @@ class Currency extends React.Component {
       </div>
     )
   }
+}
+
+Currency.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  selected: PropTypes.string.isRequired,
+  currencies: PropTypes.array.isRequired,
+  banknotes: PropTypes.array.isRequired,
+  displayNotes: PropTypes.string.isRequired,
+  rate: PropTypes.number.isRequired
 }
 
 export default Currency

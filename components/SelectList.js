@@ -14,7 +14,7 @@ const SelectList = ({currencies, onChange, selected = ''}) => {
 SelectList.propTypes = {
   currencies: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
-  selected: PropTypes.string
+  selected: PropTypes.string.isRequired
 }
 
 export default SelectList
