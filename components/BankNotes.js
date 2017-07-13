@@ -1,12 +1,12 @@
 import React, {PropTypes} from 'react';
 
-const BankNotes = ({banknotes, selected, rate, other}) => {
+const BankNotes = ({banknotes, thisCurrency, otherCurrency, rate}) => {
   return (    
     <table>
       <thead>
         <tr>
-          <th>{selected} Banknote</th>
-          <th>{other} Equivalent</th>          
+          <th>{thisCurrency} Banknote</th>
+          <th>{otherCurrency} Equivalent</th>          
         </tr>
       </thead>
       <tbody>
@@ -25,9 +25,9 @@ const BankNotes = ({banknotes, selected, rate, other}) => {
 
 BankNotes.propTypes = {
   banknotes: PropTypes.array.isRequired,
-  selected: PropTypes.string.isRequired,
-  rate: PropTypes.number.isRequired,
-  other: PropTypes.string.isRequired
+  thisCurrency: PropTypes.string.isRequired,
+  otherCurrency: PropTypes.string.isRequired,
+  rate: PropTypes.number.isRequired
 }
 
 export default BankNotes

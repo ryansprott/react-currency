@@ -1,7 +1,7 @@
 import React from 'react'
 import Currencies from './Currencies'
 import Banner from './Banner'
-import currencies from '../public/currencies.json'
+import currencyData from '../public/currencies.json'
 
 class Container extends React.Component {
   constructor (props, context) {
@@ -13,9 +13,9 @@ class Container extends React.Component {
       foreignFullName: '',
       foreignCurrency: '',
       foreignBanknotes: [],
-      currencies: currencies 
+      currencyData: currencyData 
     }
-    this.handleLocal = this.handleLocal.bind(this)
+    this.handleLocal   = this.handleLocal.bind(this)
     this.handleForeign = this.handleForeign.bind(this)
   }
 
@@ -24,7 +24,7 @@ class Container extends React.Component {
     this.setState({
       localCurrency: event.target.value,
       localFullName: event.target.options[event.target.selectedIndex].text,
-      localBanknotes: this.state.currencies.filter(v => v.code == event.target.value)[0].banknotes
+      localBanknotes: this.state.currencyData.filter(v => v.code == event.target.value)[0].banknotes
     })    
   }
 
@@ -33,7 +33,7 @@ class Container extends React.Component {
     this.setState({
       foreignCurrency: event.target.value,
       foreignFullName: event.target.options[event.target.selectedIndex].text,
-      foreignBanknotes: this.state.currencies.filter(v => v.code == event.target.value)[0].banknotes
+      foreignBanknotes: this.state.currencyData.filter(v => v.code == event.target.value)[0].banknotes
     })    
   }
 
@@ -42,19 +42,19 @@ class Container extends React.Component {
       <div>        
         <Banner 
           localCurrency={this.state.localCurrency} 
-          foreignCurrency={this.state.foreignCurrency}           
           localFullName={this.state.localFullName} 
+          foreignCurrency={this.state.foreignCurrency}           
           foreignFullName={this.state.foreignFullName} 
         />
 
         <Currencies 
           localHandler={this.handleLocal}
-          foreignHandler={this.handleForeign}
           localCurrency={this.state.localCurrency}
-          foreignCurrencySelected={this.state.foreignCurrency}
           localBanknotes={this.state.localBanknotes}
+          foreignHandler={this.handleForeign}
+          foreignCurrency={this.state.foreignCurrency}
           foreignBanknotes={this.state.foreignBanknotes}
-          currencies={this.state.currencies}
+          currencyData={this.state.currencyData}
         />
       </div>
     )

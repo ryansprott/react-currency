@@ -12,13 +12,14 @@ class Currency extends React.Component {
       <div>
       <SelectList
         onChange={this.props.onChange} 
-        currencies={this.props.currencies}
-        selected={this.props.selected}
+        currencyData={this.props.currencyData}
+        thisCurrency={this.props.thisCurrency}
       />
-      {this.props.displayNotes && <BankNotes 
+      
+      {this.props.displayBanknotes && <BankNotes 
         banknotes={this.props.banknotes} 
-        selected={this.props.selected}
-        other={this.props.other}
+        thisCurrency={this.props.thisCurrency}
+        otherCurrency={this.props.otherCurrency}
         rate={this.props.rate}
       />}
       </div>
@@ -28,11 +29,11 @@ class Currency extends React.Component {
 
 Currency.propTypes = {
   onChange: PropTypes.func.isRequired,
-  selected: PropTypes.string.isRequired,
-  other: PropTypes.string.isRequired,
-  currencies: PropTypes.array.isRequired,
+  thisCurrency: PropTypes.string.isRequired,
+  otherCurrency: PropTypes.string.isRequired,
+  currencyData: PropTypes.array.isRequired,
   banknotes: PropTypes.array.isRequired,
-  displayNotes: PropTypes.string.isRequired,
+  displayBanknotes: PropTypes.string.isRequired,
   rate: PropTypes.number.isRequired
 }
 

@@ -1,10 +1,10 @@
 import React, {PropTypes} from 'react';
 
-const SelectList = ({currencies, onChange, selected = ''}) => {
+const SelectList = ({currencyData, onChange, thisCurrency = ''}) => {
   return (    
-    <select value={selected} onChange={onChange}>
+    <select value={thisCurrency} onChange={onChange}>
       <option value="">Select a currency...</option>
-      {currencies.map((currency, i) => {
+      {currencyData.map((currency, i) => {
         return <option key={i} value={currency.code}>{currency.full_name}</option>
       })}
     </select>
@@ -12,9 +12,9 @@ const SelectList = ({currencies, onChange, selected = ''}) => {
 }
 
 SelectList.propTypes = {
-  currencies: PropTypes.array.isRequired,
+  currencyData: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
-  selected: PropTypes.string.isRequired
+  thisCurrency: PropTypes.string.isRequired
 }
 
 export default SelectList
