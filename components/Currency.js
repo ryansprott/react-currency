@@ -18,6 +18,7 @@ class Currency extends React.Component {
       {this.props.displayNotes && <BankNotes 
         banknotes={this.props.banknotes} 
         selected={this.props.selected}
+        other={this.props.other}
         rate={this.props.rate}
       />}
       </div>
@@ -28,6 +29,7 @@ class Currency extends React.Component {
 Currency.propTypes = {
   onChange: PropTypes.func.isRequired,
   selected: PropTypes.string.isRequired,
+  other: PropTypes.string.isRequired,
   currencies: PropTypes.array.isRequired,
   banknotes: PropTypes.array.isRequired,
   displayNotes: PropTypes.string.isRequired,

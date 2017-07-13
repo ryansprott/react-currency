@@ -27,6 +27,7 @@ class Currencies extends React.Component {
         <Currency 
           onChange={this.props.localHandler}
           selected={this.props.localCurrencySelected}
+          other={this.props.foreignCurrencySelected}
           currencies={this.props.currencies.filter(v => v.code !== this.props.foreignCurrencySelected)} 
           banknotes={this.props.localBanknotes}
           displayNotes={this.props.localCurrencySelected && this.props.foreignCurrencySelected}
@@ -36,6 +37,7 @@ class Currencies extends React.Component {
         {this.props.localCurrencySelected && <Currency 
           onChange={this.props.foreignHandler} 
           selected={this.props.foreignCurrencySelected}
+          other={this.props.localCurrencySelected}
           currencies={this.props.currencies.filter(v => v.code !== this.props.localCurrencySelected)} 
           banknotes={this.props.foreignBanknotes}
           displayNotes={this.props.localCurrencySelected && this.props.foreignCurrencySelected}
