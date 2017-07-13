@@ -1,5 +1,6 @@
 import React from 'react'
-import SelectList from './SelectList'
+import Currency from './Currency'
+import Banner from './Banner'
 import currencies from '../public/currencies.json'
 
 class Container extends React.Component {
@@ -19,6 +20,7 @@ class Container extends React.Component {
   }
 
   handleLocal(event) {        
+    if (!event.target.value) return false
     this.setState({
       localCurrencySelected: event.target.value,
       localFullName: event.target.options[event.target.selectedIndex].text,
@@ -27,6 +29,7 @@ class Container extends React.Component {
   }
 
   handleForeign(event) {    
+    if (!event.target.value) return false
     this.setState({
       foreignCurrencySelected: event.target.value,
       foreignFullName: event.target.options[event.target.selectedIndex].text,
@@ -37,21 +40,25 @@ class Container extends React.Component {
   render () {
     return (
       <div>        
-        <div>
-          {this.state.localCurrencySelected && <span>Converting from {this.state.localFullName}</span>}
-          {this.state.foreignCurrencySelected && <span> to {this.state.foreignFullName}</span>}
-        </div>
-        
-        <SelectList
+        <Banner 
+          localCurrency={this.state.localCurrencySelected} 
+          foreignCurrency={this.state.foreignCurrencySelected}           
+          localFullName={this.state.localFullName} 
+          foreignFullName={this.state.foreignFullName} 
+        />
+
+        <Currency 
           onChange={this.handleLocal} 
           currencies={this.state.currencies.filter(v => v.code !== this.state.foreignCurrencySelected)} 
           selected={this.state.localCurrencySelected}
-          />
-
-        {this.state.localCurrencySelected && <SelectList 
+          banknotes={this.state.localBanknotes}
+        />
+        
+        {this.state.localCurrencySelected && <Currency 
           onChange={this.handleForeign} 
           currencies={this.state.currencies.filter(v => v.code !== this.state.localCurrencySelected)} 
           selected={this.state.foreignCurrencySelected}
+          banknotes={this.state.foreignBanknotes}
         />}
       </div>
     )
