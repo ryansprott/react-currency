@@ -2,10 +2,11 @@ import React, {PropTypes} from 'react';
 
 const Banner = ({localCurrency, foreignCurrency, localFullName, foreignFullName}) => {
   return (
-    <p>
+    <div className="jumbotron">
+      <h4>React Currency Converter</h4>
       {localCurrency && <span>Converting from <b>{localFullName}</b></span>}
       {foreignCurrency && <span> to <b>{foreignFullName}</b></span>}
-    </p>
+    </div>
   )
 }
 

@@ -25,26 +25,30 @@ class Currencies extends React.Component {
 
   render() {
     return(
-      <div>
-        <Currency 
-          onChange={this.props.localHandler}
-          thisCurrency={this.props.localCurrency}
-          otherCurrency={this.props.foreignCurrency}
-          currencyData={this.props.currencyData.filter(v => v.code !== this.props.foreignCurrency)} 
-          banknotes={this.props.localBanknotes}
-          displayBanknotes={this.props.localCurrency && this.props.foreignCurrency}
-          rate={this.state.rate}
-        />
-        
-        {this.props.localCurrency && <Currency 
-          onChange={this.props.foreignHandler} 
-          thisCurrency={this.props.foreignCurrency}
-          otherCurrency={this.props.localCurrency}
-          currencyData={this.props.currencyData.filter(v => v.code !== this.props.localCurrency)} 
-          banknotes={this.props.foreignBanknotes}
-          displayBanknotes={this.props.localCurrency && this.props.foreignCurrency}
-          rate={1/this.state.rate}
-        />}
+      <div className="row">
+        <div className="col-sm-6">
+          <Currency 
+            onChange={this.props.localHandler}
+            thisCurrency={this.props.localCurrency}
+            otherCurrency={this.props.foreignCurrency}
+            currencyData={this.props.currencyData.filter(v => v.code !== this.props.foreignCurrency)} 
+            banknotes={this.props.localBanknotes}
+            displayBanknotes={this.props.localCurrency && this.props.foreignCurrency}
+            rate={this.state.rate}
+          />
+        </div>
+
+        <div className="col-sm-6">
+          {this.props.localCurrency && <Currency 
+            onChange={this.props.foreignHandler} 
+            thisCurrency={this.props.foreignCurrency}
+            otherCurrency={this.props.localCurrency}
+            currencyData={this.props.currencyData.filter(v => v.code !== this.props.localCurrency)} 
+            banknotes={this.props.foreignBanknotes}
+            displayBanknotes={this.props.localCurrency && this.props.foreignCurrency}
+            rate={1/this.state.rate}
+          />}
+        </div>
       </div>
     )
   }

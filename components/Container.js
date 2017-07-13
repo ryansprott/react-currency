@@ -39,7 +39,7 @@ class Container extends React.Component {
 
   render () {
     return (
-      <div>        
+      <div className="container-fluid">        
         <Banner 
           localCurrency={this.state.localCurrency} 
           localFullName={this.state.localFullName} 

@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 
 const BankNotes = ({banknotes, thisCurrency, otherCurrency, rate}) => {
   return (    
-    <table>
+    <table className="table">
       <thead>
         <tr>
           <th>{thisCurrency} Banknote</th>
