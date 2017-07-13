@@ -10,12 +10,16 @@ class Currencies extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.localCurrencySelected && nextProps.foreignCurrencySelected) {
-      fetch('https://api.fixer.io/latest?base=' + nextProps.localCurrencySelected + '&symbols=' + nextProps.foreignCurrencySelected)
+    var local = nextProps.localCurrency
+    var foreign = nextProps.foreignCurrencySelected
+    if (local && foreign) {
+      fetch('https://api.fixer.io/latest?base=' + local + '&symbols=' + foreign)
       .then((resp) => {
-        resp.json().then((data) => {
+        console.log("waiting")
+        resp.json().then((data) => {          
           var rate = data.rates[Object.keys(data.rates)[0]]
           this.setState({ rate: rate })
+          console.log("done")
         })
       })
     }
@@ -26,21 +30,21 @@ class Currencies extends React.Component {
       <div>
         <Currency 
           onChange={this.props.localHandler}
-          selected={this.props.localCurrencySelected}
+          selected={this.props.localCurrency}
           other={this.props.foreignCurrencySelected}
           currencies={this.props.currencies.filter(v => v.code !== this.props.foreignCurrencySelected)} 
           banknotes={this.props.localBanknotes}
-          displayNotes={this.props.localCurrencySelected && this.props.foreignCurrencySelected}
+          displayNotes={this.props.localCurrency && this.props.foreignCurrencySelected}
           rate={this.state.rate}
         />
 
-        {this.props.localCurrencySelected && <Currency 
+        {this.props.localCurrency && <Currency 
           onChange={this.props.foreignHandler} 
           selected={this.props.foreignCurrencySelected}
-          other={this.props.localCurrencySelected}
-          currencies={this.props.currencies.filter(v => v.code !== this.props.localCurrencySelected)} 
+          other={this.props.localCurrency}
+          currencies={this.props.currencies.filter(v => v.code !== this.props.localCurrency)} 
           banknotes={this.props.foreignBanknotes}
-          displayNotes={this.props.localCurrencySelected && this.props.foreignCurrencySelected}
+          displayNotes={this.props.localCurrency && this.props.foreignCurrencySelected}
           rate={1/this.state.rate}
         />}
       </div>
@@ -51,7 +55,7 @@ class Currencies extends React.Component {
 Currencies.propTypes = {
   localHandler: PropTypes.func.isRequired,
   foreignHandler: PropTypes.func.isRequired,
-  localCurrencySelected: PropTypes.string.isRequired,
+  localCurrency: PropTypes.string.isRequired,
   foreignCurrencySelected: PropTypes.string.isRequired,
   localBanknotes: PropTypes.array.isRequired,
   foreignBanknotes: PropTypes.array.isRequired,

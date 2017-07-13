@@ -8,10 +8,10 @@ class Container extends React.Component {
     super(props, context);    
     this.state = { 
       localFullName: '',
-      localCurrencySelected: '',
+      localCurrency: '',
       localBanknotes: [],
       foreignFullName: '',
-      foreignCurrencySelected: '',
+      foreignCurrency: '',
       foreignBanknotes: [],
       currencies: currencies 
     }
@@ -22,7 +22,7 @@ class Container extends React.Component {
   handleLocal(event) {        
     if (!event.target.value) return false
     this.setState({
-      localCurrencySelected: event.target.value,
+      localCurrency: event.target.value,
       localFullName: event.target.options[event.target.selectedIndex].text,
       localBanknotes: this.state.currencies.filter(v => v.code == event.target.value)[0].banknotes
     })    
@@ -31,7 +31,7 @@ class Container extends React.Component {
   handleForeign(event) {    
     if (!event.target.value) return false
     this.setState({
-      foreignCurrencySelected: event.target.value,
+      foreignCurrency: event.target.value,
       foreignFullName: event.target.options[event.target.selectedIndex].text,
       foreignBanknotes: this.state.currencies.filter(v => v.code == event.target.value)[0].banknotes
     })    
@@ -41,8 +41,8 @@ class Container extends React.Component {
     return (
       <div>        
         <Banner 
-          localCurrency={this.state.localCurrencySelected} 
-          foreignCurrency={this.state.foreignCurrencySelected}           
+          localCurrency={this.state.localCurrency} 
+          foreignCurrency={this.state.foreignCurrency}           
           localFullName={this.state.localFullName} 
           foreignFullName={this.state.foreignFullName} 
         />
@@ -50,8 +50,8 @@ class Container extends React.Component {
         <Currencies 
           localHandler={this.handleLocal}
           foreignHandler={this.handleForeign}
-          localCurrencySelected={this.state.localCurrencySelected}
-          foreignCurrencySelected={this.state.foreignCurrencySelected}
+          localCurrency={this.state.localCurrency}
+          foreignCurrencySelected={this.state.foreignCurrency}
           localBanknotes={this.state.localBanknotes}
           foreignBanknotes={this.state.foreignBanknotes}
           currencies={this.state.currencies}
