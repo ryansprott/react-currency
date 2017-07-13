@@ -1,17 +1,23 @@
 import React, {PropTypes} from 'react';
 
-const BankNotes = ({banknotes, selected}) => {
+const BankNotes = ({banknotes, selected, rate}) => {
   return (    
     <table>
+      <thead>
+        <tr>
+          <th>Banknote</th>
+          <th>Equivalent</th>          
+        </tr>
+      </thead>
       <tbody>
-      {banknotes.map((v, i) => {
-        return(       
-          <tr key={i}>
-            <td>{v + ' ' + selected}</td>
-            <td></td>
-          </tr>
-        )
-      })}
+        {banknotes.map((value, index) => {
+          return(       
+            <tr key={index}>
+              <td>{value}</td>
+              <td>{(value * rate).toFixed(2)}</td>
+            </tr>
+          )
+        })}
       </tbody>
     </table>
   )
@@ -19,7 +25,8 @@ const BankNotes = ({banknotes, selected}) => {
 
 BankNotes.propTypes = {
   banknotes: PropTypes.array.isRequired,
-  selected: PropTypes.string.isRequired
+  selected: PropTypes.string.isRequired,
+  rate: PropTypes.number.isRequired
 }
 
 export default BankNotes

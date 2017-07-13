@@ -7,12 +7,12 @@ class Container extends React.Component {
   constructor (props, context) {
     super(props, context);    
     this.state = { 
-      localFullName: 'US dollar',
-      localCurrencySelected: 'USD',
-      localBanknotes: [1, 5, 10, 20, 50, 100],
-      foreignFullName: 'Mexican peso',
-      foreignCurrencySelected: 'MXN',
-      foreignBanknotes: [20, 50, 100, 200, 500],
+      localFullName: '',
+      localCurrencySelected: '',
+      localBanknotes: [],
+      foreignFullName: '',
+      foreignCurrencySelected: '',
+      foreignBanknotes: [],
       currencies: currencies 
     }
     this.handleLocal = this.handleLocal.bind(this)
@@ -55,7 +55,6 @@ class Container extends React.Component {
           localBanknotes={this.state.localBanknotes}
           foreignBanknotes={this.state.foreignBanknotes}
           currencies={this.state.currencies}
-          setRate={this.setRate}
         />
       </div>
     )

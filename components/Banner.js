@@ -3,8 +3,8 @@ import React, {PropTypes} from 'react';
 const Banner = ({localCurrency, foreignCurrency, localFullName, foreignFullName}) => {
   return (
     <p>
-      {localCurrency && <span>Converting from {localFullName}</span>}
-      {foreignCurrency && <span> to {foreignFullName}</span>}
+      {localCurrency && <span>Converting from <b>{localFullName}</b></span>}
+      {foreignCurrency && <span> to <b>{foreignFullName}</b></span>}
     </p>
   )
 }

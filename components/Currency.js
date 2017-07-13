@@ -15,10 +15,11 @@ class Currency extends React.Component {
         currencies={this.props.currencies}
         selected={this.props.selected}
       />
-      <BankNotes 
+      {this.props.displayNotes && <BankNotes 
         banknotes={this.props.banknotes} 
         selected={this.props.selected}
-      />
+        rate={this.props.rate}
+      />}
       </div>
     )
   }
