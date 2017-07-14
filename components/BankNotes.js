@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const BankNotes = ({banknotes, thisCurrency, otherCurrency, rate}) => {
@@ -14,7 +14,7 @@ const BankNotes = ({banknotes, thisCurrency, otherCurrency, rate}) => {
         {banknotes.map((value, index) => {
           return(       
             <tr key={index}>
-              <td>{value}</td>
+              <td>{value.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</td>
               <td>{(value * rate).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}</td>
             </tr>
           )

@@ -5,7 +5,7 @@ import currencyData from '../public/currencies.json'
 
 class Container extends React.Component {
   constructor (props, context) {
-    super(props, context);    
+    super(props, context)
     this.state = { 
       localFullName: '',
       localCurrency: '',
