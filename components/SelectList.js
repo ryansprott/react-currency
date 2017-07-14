@@ -1,23 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const SelectList = ({currencyData, onChange, thisCurrency = ''}) => {
+const SelectList = ({data, onChange, placeholder, createOptions, selected}) => {
   return (    
-    <div className="form-group">
-      <select className="form-control" value={thisCurrency} onChange={onChange}>
-        <option value="">Select a currency...</option>
-        {currencyData.map((currency, i) => {
-          return <option key={i} value={currency.code}>{currency.full_name}</option>
-        })}
-      </select>
-    </div>
+    <select className="form-control" value={selected} onChange={onChange}>
+      <option value="">{placeholder}</option>
+      {createOptions(data)}
+    </select>
   )
 }
 
 SelectList.propTypes = {
-  currencyData: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired,
-  thisCurrency: PropTypes.string.isRequired
+  data: PropTypes.array,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  createOptions: PropTypes.func,
+  selected: PropTypes.string
 }
 
 export default SelectList

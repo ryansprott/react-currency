@@ -18,7 +18,7 @@ class Currencies extends React.Component {
       fetch('https://api.fixer.io/latest?base=' + local + '&symbols=' + foreign)
       .then((resp) => {
         resp.json().then((data) => {          
-          var rate = data.rates[Object.keys(data.rates)[0]]
+          var rate = data.rates[foreign]
           this.setState({ rate: rate })         
           $.unblockUI()          
         })

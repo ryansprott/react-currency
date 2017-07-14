@@ -8,14 +8,24 @@ class Currency extends React.Component {
     super(props, context)
   }
 
+  createOptions(data) {
+    return(data.map((currency, i) => {
+      return <option key={i} value={currency.code}>{currency.full_name}</option>
+    }))
+  }
+
   render() {
     return(
       <div>
-      <SelectList
-        onChange={this.props.onChange} 
-        currencyData={this.props.currencyData}
-        thisCurrency={this.props.thisCurrency}
-      />
+        <div className="form-group">
+          <SelectList
+            onChange={this.props.onChange} 
+            data={this.props.currencyData}
+            selected={this.props.thisCurrency}
+            createOptions={this.createOptions}
+            placeholder='Select a currency...'
+          />
+        </div>
       
       {this.props.displayBanknotes && <BankNotes 
         banknotes={this.props.banknotes} 
