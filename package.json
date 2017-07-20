@@ -9,7 +9,13 @@
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean-dist": "npm run remove-dist && mkdir dist",
+    "remove-dist": "node_modules/.bin/rimraf ./dist",
+    "build-html": "babel-node tools/buildHtml.js",
+    "prebuild": "npm-run-all clean-dist lint build-html",
+    "build": "babel-node tools/build.js",
+    "postbuild": "babel-node tools/distServer.js"
   },
   "repository": {
     "type": "git",
@@ -24,11 +30,13 @@
   "dependencies": {
     "block-ui": "^2.70.1",
     "bootstrap": "^3.3.7",
+    "cheerio": "^1.0.0-rc.2",
     "colors": "^1.1.2",
     "eslint": "^4.2.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-watch": "^3.1.2",
+    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "jquery": "^3.2.1",
     "jquery-ui-dist": "^1.12.1",
