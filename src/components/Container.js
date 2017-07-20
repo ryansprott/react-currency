@@ -1,7 +1,7 @@
 import React from 'react'
 import Currencies from './Currencies'
 import Banner from './Banner'
-import currencyData from '../public/currencies.json'
+import currencyData from '../data/currencies.json'
 
 class Container extends React.Component {
   constructor (props, context) {

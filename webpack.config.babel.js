@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 
 export default {
-  entry: path.resolve(__dirname, 'app'),
+  entry: path.resolve(__dirname, 'src/app'),
   target: 'web',
   output: {
     path: __dirname + '/dist',
@@ -10,7 +10,7 @@ export default {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public')
+    contentBase: path.resolve(__dirname, 'src')
   },
   module: {
     loaders: [
