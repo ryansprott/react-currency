@@ -1,5 +1,5 @@
-import webpack from 'webpack';
-import path from 'path';
+import webpack from 'webpack'
+import path from 'path'
 
 export default {
   entry: path.resolve(__dirname, 'src/app'),
@@ -22,4 +22,4 @@ export default {
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml'}
     ]
   }
-};
+}
