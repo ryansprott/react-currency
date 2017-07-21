@@ -11,14 +11,14 @@ class Currencies extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    var local   = nextProps.localCurrency
-    var foreign = nextProps.foreignCurrency
+    let local   = nextProps.localCurrency
+    let foreign = nextProps.foreignCurrency
     if (local && foreign) {
       $.blockUI()
       fetch('https://api.fixer.io/latest?base=' + local + '&symbols=' + foreign)
       .then((resp) => {
         resp.json().then((data) => {          
-          var rate = data.rates[foreign]
+          let rate = data.rates[foreign]
           this.setState({ rate: rate })         
           $.unblockUI()          
         })
