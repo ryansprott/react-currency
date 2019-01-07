@@ -13,7 +13,7 @@ export default {
     contentBase: path.resolve(__dirname, 'src')
   },
   module: {
-    loaders: [
+    rules: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
       {test: /(\.css)$/, loaders: ['style-loader', 'css-loader']},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},

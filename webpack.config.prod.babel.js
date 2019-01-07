@@ -20,7 +20,7 @@ export default {
     new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
-    loaders: [
+    rules: [
       {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel-loader']},
       {test: /(\.css)$/, loader: ExtractTextPlugin.extract({use: "css-loader?url=false"})},      
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
