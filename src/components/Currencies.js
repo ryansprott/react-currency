@@ -15,7 +15,7 @@ class Currencies extends React.Component {
     let foreign = nextProps.foreignCurrency
     if (local && foreign) {
       $.blockUI()
-      fetch('https://api.fixer.io/latest?base=' + local + '&symbols=' + foreign)
+      fetch('https://api.exchangeratesapi.io/latest?base=' + local + '&symbols=' + foreign)
       .then((resp) => {
         resp.json().then((data) => {          
           let rate = data.rates[foreign]
