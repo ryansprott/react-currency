@@ -1,6 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
 export default {
   devtool: 'source-map',
@@ -16,13 +17,22 @@ export default {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin('styles.css'),    
-    new webpack.optimize.UglifyJsPlugin()
+    new MiniCssExtractPlugin({filename: 'styles.css'}),
+    new UglifyJsPlugin()
   ],
   module: {
     rules: [
       {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel-loader']},
-      {test: /(\.css)$/, loader: ExtractTextPlugin.extract({use: "css-loader?url=false"})},      
+      {test: /\.css$/, use: [{
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+              reloadAll: true,
+            },
+          },
+          'css-loader',
+        ],
+      },
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},

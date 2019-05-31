@@ -23,7 +23,7 @@ class Currency extends React.Component {
             data={this.props.currencyData}
             selected={this.props.thisCurrency}
             createOptions={this.createOptions}
-            placeholder='Select a currency...'
+            placeholder="Select a currency..."
           />
         </div>
       
